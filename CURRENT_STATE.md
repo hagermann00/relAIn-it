@@ -33,6 +33,24 @@
   - No code imported — concepts only noted for potential rewrite
   - Quarantine manifest written with forensic assessment
 
+### Conductor CLI (Phase 0) ✅
+- **conductor:status** — Full diagnostic of project health and foundation
+- **conductor:setup** — Audit / Flash / Conductor scaffolding logic
+- **conductor:review** — Action log and track monitoring
+- **conductor:revert** — Safety layer to undo conductor actions
+- **conductor:newTrack / implement** — Task orchestration system
+- **Verified** — Inaugural run shows 🟢 READY with 15/15 foundation files.
+- **Pure Python** — Zero external runtime dependencies (std-lib only).
+
+### Conductor CLI (Phase 0) ✅
+- **conductor:status** — Full diagnostic of project health and foundation
+- **conductor:setup** — Audit / Flash / Conductor scaffolding logic
+- **conductor:review** — Action log and track monitoring
+- **conductor:revert** — Safety layer to undo conductor actions
+- **conductor:newTrack / implement** — Task orchestration system
+- **Verified** — Inaugural run shows 🟢 READY with 15/15 foundation files.
+- **Pure Python** — Zero external runtime dependencies (std-lib only).
+
 ### Specification ✅
 - Full architecture spec written covering:
   - Four intervention types (Riding Crop, Hold-the-Horses, Nudge, Silent)
@@ -41,14 +59,6 @@
   - TTS + STT + highlight-read-aloud confirmed in scope
 
 ## What's Next
-
-### Immediate: Conductor Bootstrap (Phase 0)
-The standard for serious work is relAIn-it involvement. Before building more features, build the **Conductor** — a minimal interactive scaffold tool — and use it to initialize relAIn-it's own project. Eat our own cooking from day zero.
-
-1. **Build Minimal Conductor** — Interactive prompt flow + scaffold generator
-2. **Run Conductor on relAIn-it** — Let it generate/validate the foundation
-3. **Verify full build** — `npm install` + `cargo tauri dev` end-to-end
-4. **Commit as conductor-scaffolded foundation**
 
 ### Phase 1: The Watcher Core
 - File system watcher (`notify` crate)
