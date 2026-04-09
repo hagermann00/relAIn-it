@@ -24,3 +24,7 @@ Thumbs.db
 
 # relAIn-it internal data (observation DB, logs)
 .relain-it/
+
+# Python
+__pycache__/
+*.pyc
