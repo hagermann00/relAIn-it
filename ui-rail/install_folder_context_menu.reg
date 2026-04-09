@@ -1,0 +1,18 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\shell\ReadDump]
+@="Send to Sovereign Rail"
+"Icon"="\"%PROGRAMFILES%\\relAIn-it Rail\\relain-it-rail.exe\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\ReadDump\command]
+; NOTE: Customize this line to run your specific script or command on the selected read dump folder.
+; %1 is the path of the folder you right-clicked.
+@="\"C:\\Path\\To\\Your\\Script.bat\" \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ReadDump]
+@="Send to Sovereign Rail"
+"Icon"="\"%PROGRAMFILES%\\relAIn-it Rail\\relain-it-rail.exe\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ReadDump\command]
+; NOTE: %V is the path of the current directory.
+@="\"C:\\Path\\To\\Your\\Script.bat\" \"%V\""

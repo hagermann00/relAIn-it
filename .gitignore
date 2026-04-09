@@ -1,0 +1,26 @@
+# Cargo / Rust
+ui-rail/src-tauri/target/
+ui-rail/src-tauri/Cargo.lock
+
+# Node / Frontend
+ui-rail/node_modules/
+ui-rail/dist/
+
+# Build artifacts & debug logs
+ui-rail/src-tauri/cargo_err.txt
+ui-rail/src-tauri/error.txt
+ui-rail/src-tauri/check_errors*.txt
+ui-rail/src-tauri/check_final.txt
+ui-rail/tauri_build.log
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# relAIn-it internal data (observation DB, logs)
+.relain-it/

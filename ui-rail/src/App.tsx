@@ -2,20 +2,29 @@ import { useState, useEffect } from "react";
 import { invoke } from "@tauri-apps/api/core";
 import { listen } from "@tauri-apps/api/event";
 
+import FloatingPlayer from "./FloatingPlayer";
+
 // relAIn-it: App.tsx - The Stealth Rail UI
 // Role: Clerk (Interface Management)
 
 function App() {
+  const [isFloatingPlayer, setIsFloatingPlayer] = useState(false);
   const [width, setWidth] = useState(20);
   const [telemetry, setTelemetry] = useState({ cpu: 0, ram: 0 });
   const [isOpenClawActive, setIsOpenClawActive] = useState(false);
+
+  useEffect(() => {
+    if (window.location.search.includes("floating-player")) {
+      setIsFloatingPlayer(true);
+    }
+  }, []);
 
   // Listen for Rust Telemetry and OpenClaw Status
   useEffect(() => {
     const unlisten = listen("telemetry-update", (event: any) => {
       setTelemetry({ 
-        cpu: event.payload.cpu_usage.toFixed(1), 
-        ram: (event.payload.ram_usage / 1024 / 1024 / 1024).toFixed(1) // GB
+        cpu: parseFloat(event.payload.cpu_usage.toFixed(1)), 
+        ram: parseFloat((event.payload.ram_usage / 1024 / 1024 / 1024).toFixed(1))
       });
     });
 
@@ -28,6 +37,10 @@ function App() {
       unlistenClaw.then(f => f());
     };
   }, []);
+
+  if (isFloatingPlayer) {
+    return <FloatingPlayer />;
+  }
 
   // Window Resize Logic (20px -> 100px -> 400px)
   const handleResize = (newWidth: number) => {
